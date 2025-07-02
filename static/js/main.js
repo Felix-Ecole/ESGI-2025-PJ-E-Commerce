@@ -6,3 +6,14 @@ export async function importData(filename) {
 	if (r.ok) return await r.json()
 	throw new Error(`fail to fetch ${path}`)
 }
+
+// Fonction utilitaire qui hash le mot de passe selon une date.
+export async function hashPass(password, timeStamp) {
+	let npass = Number(password.split("").map((x) => `${x.charCodeAt()}`).join(""))
+	return `${(npass * timeStamp) % 1000000000}`
+}
+
+// Fonction qui déconnecte l'utilisateur.
+export function logout() {
+	localStorage.removeItem("connectedUser");
+}

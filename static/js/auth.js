@@ -1,3 +1,5 @@
+import { hashPass } from "./main.js"
+
 class User {
     constructor(firstName, lastName, email, password, date) {
         this.firstName = firstName;
@@ -6,12 +8,6 @@ class User {
         this.password = password;
         this.date = date;
     }
-}
-
-//hash le password selon une date
-async function hashPass(password, timeStamp) {
-    let npass = Number(password.split("").map((x) => `${x.charCodeAt()}`).join(""))
-    return `${(npass * timeStamp) % 1000000000}`
 }
 
 //détection de la connexion du client et redirection vers index.html si connecter
@@ -57,7 +53,5 @@ document.getElementById('register').onsubmit = async function (e) {
     }
 };
 
-// Lors du logout, retirer l'item du localstorage
-export function logout() {
-    localStorage.removeItem('connectedUser');
-}
+// Si déjà connecter, alors, redirige vers la page d'accueil.
+if (localStorage.getItem("connectedUser")) document.location = 'index.html'
