@@ -1,0 +1,213 @@
+/* Unified and updated CSS */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f8f8f8;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+header,
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer {
+  font-size: 0.9rem;
+  color: #c0c0c0;
+}
+
+footer a {
+  color: #faccaf;
+}
+
+footer a:hover {
+  color: #faeea4;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.actions,
+.total,
+.promo-field {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+.info {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.product {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: white;
+}
+
+.product h2 {
+  margin: 0;
+}
+
+#loginPrompt {
+  background: #ffdddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 40%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  label {
+    width: 100%;
+  }
+}
+
+
+button {
+	margin: 0.5rem;
+	background-color: grey;
+	max-width: 20rem;
+	color: white;
+	text-transform: uppercase;
+	font-weight: 800;
+	padding: 1em 3em;
+	display: inline-block;
+	text-align: center;
+	border: solid thin transparent;
+}
+
+button:hover {
+  background: #555;
+}
+
+.restart {
+  border-radius: 0.5rem;
+  height: inherit;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+input[type="number"] {
+  width: 60px;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-bottom: 1rem;
+}
+
+th,
+td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Additions from provided CSS */
+.card {
+  border: solid thin black;
+  border-radius: 1rem;
+  width: 24rem;
+  height: 8rem;
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  border: solid thin black;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+}
+
+a:hover {
+  border-color: #333;
+  background: #333;
+  color: white;
+}
+
+.article {
+  border: solid thin #111;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 800px;
+}
+
+.sidebar {
+  width: 20%;
+  padding: 0.5rem;
+  background: #202d5f;
+}
+
+.sidebar a {
+  color: #fff;
+  margin: 0.5rem;
+  padding: 0.25rem 1rem;
+  display: block;
+}
+
+.blank {
+  background: #fff;
+}
+
+.red {
+  background: red;
+}
+
+.none {
+  display: none !important;
+}
