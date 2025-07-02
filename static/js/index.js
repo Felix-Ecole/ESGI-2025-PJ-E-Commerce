@@ -1,7 +1,10 @@
-import { importData } from "./main.js"
+import { importData, logout } from "./main.js"
+
+window["logout"] = logout
+
 
 class HTMLCard {
-	constructor () {
+	constructor() {
 		Promise.all(
 			[importData("products.json"), importData("reductions.json")]
 		).then(
@@ -10,15 +13,15 @@ class HTMLCard {
 					let card = this.createCard(id, product, reductions)
 					document.getElementById("productList").appendChild(card)
 				})
-		})
-		.catch(e => console.error("Product initialisation failed:", e))
+			})
+			.catch(e => console.error("Product initialisation failed:", e))
 	}
 
 	// Fonction qui retourne une réduction qui a été appliqué à un produit.
 	applyReduction(pID, p, r) {
 		let [direct, category] = [r[pID], r[p.category]]
 		let [iPrice, fPrice] = [p.price, p.price]
-		
+
 		if (direct) {
 			if (direct.type === "%") { fPrice -= iPrice * (direct.value / 100) }
 			else if (direct.type === "€") { fPrice -= direct.value }
@@ -73,6 +76,12 @@ class HTMLCard {
 	}
 }
 
+// Si l'utilisateur est connecter, alors, affiche en conséquence les messages.
+if (localStorage.getItem("connectedUser")) {
+	document.querySelector("#unlogged").style.display = "none"
+	document.querySelector(".warning").style.display = "none"
+	document.querySelector("#logged").style.display = ""
+}
 
 // Lance la récupération des produits et
 // de leur promotions une fois la page charger.
