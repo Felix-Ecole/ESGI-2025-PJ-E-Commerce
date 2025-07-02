@@ -1,0 +1,6 @@
+{
+	"1720204800001": { "promotable": false, "type": "%", "value": 10 },
+	"1720204800011": { "promotable": false, "type": "€", "value": 8 },
+	"Accessoires": { "promotable": true, "type": "%", "value": 5 },
+	"Chaussures": { "promotable": true, "type": "€", "value": 5 }
+}

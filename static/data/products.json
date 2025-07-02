@@ -1,0 +1,74 @@
+{
+	"1720204800001": {
+		"name": "T-shirt Classique",
+		"description": "T-shirt en coton doux, coupe standard.",
+		"category": "Vêtements",
+		"price": 20
+	},
+	"1720204800002": {
+		"name": "Jean Slim",
+		"description": "Jean bleu foncé, coupe ajustée.",
+		"category": "Vêtements",
+		"price": 45
+	},
+	"1720204800003": {
+		"name": "Basket Légère",
+		"description": "Chaussures légères et confortables pour la marche.",
+		"category": "Chaussures",
+		"price": 60
+	},
+	"1720204800004": {
+		"name": "Casquette Noire",
+		"description": "Casquette classique noire ajustable.",
+		"category": "Accessoires",
+		"price": 15
+	},
+	"1720204800005": {
+		"name": "Montre Digitale",
+		"description": "Montre avec chronomètre et alarme.",
+		"category": "Accessoires",
+		"price": 35
+	},
+	"1720204800006": {
+		"name": "Sweat Capuche",
+		"description": "Sweat confortable avec capuche et poche kangourou.",
+		"category": "Vêtements",
+		"price": 55
+	},
+	"1720204800007": {
+		"name": "Chaussures de Sport",
+		"description": "Chaussures idéales pour running et fitness.",
+		"category": "Chaussures",
+		"price": 75
+	},
+	"1720204800008": {
+		"name": "Lunettes de Soleil",
+		"description": "Protection UV400, style aviator.",
+		"category": "Accessoires",
+		"price": 25
+	},
+	"1720204800009": {
+		"name": "Sac à Dos Urban",
+		"description": "Sac à dos en toile, design moderne.",
+		"category": "Bagagerie",
+		"price": 40
+	},
+	"1720204800010": {
+		"name": "Ceinture Cuir",
+		"description": "Ceinture en cuir véritable, boucle métallique.",
+		"category": "Accessoires",
+		"price": 30
+	},
+	"1720204800011": {
+		"name": "Chemise Blanche",
+		"description": "Chemise blanche à manches longues.",
+		"category": "Vêtements",
+		"price": 38
+	},
+	"1720204800012": {
+		"name": "Short de Bain",
+		"description": "Short séchage rapide, idéal pour l'été.",
+		"category": "Vêtements",
+		"price": 28
+	}
+}
