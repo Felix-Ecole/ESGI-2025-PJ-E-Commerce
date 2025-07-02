@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Panier - My E-Commerce</title>
+		<meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="static/css/main.css">
+	</head>
+	<body>
+		<header>
+			<h1>Votre panier - My E-commerce</h1>
+			<div><a onclick="disconnect()">Déconnexion</a></div>
+		</header>
+
+		<main>
+			<section>
+				<table id="cartTable">
+					<thead>
+						<tr>
+							<th>Produit</th>
+							<th>Prix unitaire</th>
+							<th>Quantité</th>
+							<th>Réduction</th>
+							<th>Total</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</section>
+
+			<section>
+				<form id="promo">
+					<label for="promoInput">Code promo : </label>
+					<input type="text" id="promoInput" />
+					<button onclick="applyPromoCode()">Appliquer</button>
+				</form>
+
+				<form id="validate">
+					<strong>Total : <span id="totalPrice">0 €</span></strong>
+					<button onclick="validateCart()">Valider le panier</button>
+				</form>
+			</section>
+		</main>
+
+		<footer>
+			<div id="script">
+				<script type="module" src="static/js/cart.js"></script>
+			</div>
+		</footer>
+	</body>
+</html>

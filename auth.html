@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Auth - My E-Commerce</title>
+		<meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="static/css/main.css">
+	</head>
+	<body>
+		<header>
+			<h1>Authentification - My E-commerce</h1>
+		</header>
+
+		<main>
+			<section>
+				<!-- Connexion -->
+				<form id="login">
+					<h2>Connexion</h2>
+					<label>Email : <input type="email" id="loginEmail" required /></label>
+					<label>Mot de passe : <input type="password" id="loginPassword" required /></label>
+					<div class="error" id="loginError"></div>
+					<button type="submit">Se connecter</button>
+				</form>
+			
+				<!-- Inscription -->
+				<form id="register">
+					<h2>Inscription</h2>
+					<label>Prénom : <input type="text" id="regFirstName" required /></label>
+					<label>Nom : <input type="text" id="regLastName" required /></label>
+					<label>Email : <input type="email" id="regEmail" required /></label>
+					<label>Mot de passe : <input type="password" id="regPassword" required /></label>
+					<label>Confirmer le mot de passe : <input type="password" id="regConfirmPassword" required /></label>
+					<div class="error" id="registerError"></div>
+					<button type="submit">S'inscrire</button>
+				</form>
+			</section>
+		</main>
+
+		<footer>
+			<div id="script">
+				<script type="module" src="static/js/auth.js"></script>
+			</div>
+		</footer>
+	</body>
+</html>
