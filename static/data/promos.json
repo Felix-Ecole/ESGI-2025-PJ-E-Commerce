@@ -1,0 +1,5 @@
+{
+  "ESGI10": { "type": "€", "value": 10 },
+  "SUMMER20": { "type": "%", "value": 20 },
+  "SUPERADMIN100": { "type": "%", "value": 100 }
+}
