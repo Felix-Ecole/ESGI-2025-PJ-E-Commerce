@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Accueil - My E-Commerce</title>
+		<meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="static/css/main.css">
+	</head>
+	<body>
+		<header>
+			<h1>Bienvenue sur My E-commerce</h1>
+			<div id="logged" style="display: none;">
+				<a href="cart.html">Votre Panier</a>
+				<a onclick="disconnect()">Déconnexion</a>
+			</div>
+			<div id="unlogged">
+				<a href="auth.html">Connexion/Inscription</a>
+			</div>
+		</header>
+
+		<main>
+			<section class="warning">Vous devez être connecter pour pouvoir accédée à votre panier</section>
+
+			<section id="productList">
+			</section>
+		</main>
+
+		<footer>
+			&copy; 2025 Mon E-commerce
+
+			<div id="script">
+				<script type="module" src="static/js/main.js"></script>
+			</div>
+		</footer>
+	</body>
+</html>
