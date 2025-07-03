@@ -17,3 +17,13 @@ export async function hashPass(password, timeStamp) {
 export function logout() {
 	localStorage.removeItem("connectedUser");
 }
+
+export function toggle() {
+	const listFavItem = JSON.parse(localStorage.getItem('favItem')) || [];
+	if(listFavItem){
+		listFavItem.forEach(FavItem => {
+			const card = document.getElementById('card-' + FavItem);
+			card.querySelectorAll('button')[1].classList.add('red');
+		});
+	}
+}
