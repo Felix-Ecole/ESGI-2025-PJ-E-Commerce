@@ -50,6 +50,7 @@ document.getElementById('register').onsubmit = async function (e) {
         localStorage.setItem(email, JSON.stringify(user));
         alert('Inscription réussie !');
         localStorage.setItem('connectedUser', email);
+        document.location = 'index.html';
     }
 };
 
