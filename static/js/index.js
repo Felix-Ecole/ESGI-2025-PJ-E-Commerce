@@ -1,4 +1,4 @@
-import { importData, logout } from "./main.js"
+import { importData, logout, toggle } from "./main.js"
 
 window["logout"] = logout
 
@@ -13,6 +13,7 @@ class HTMLCard {
 					let card = this.createCard(id, product, reductions)
 					document.getElementById("productList").appendChild(card)
 				})
+				toggle();
 			})
 			.catch(e => console.error("Product initialisation failed:", e))
 	}
@@ -42,6 +43,7 @@ class HTMLCard {
 
 		let element = document.createElement("article")
 		element.className = "card"
+		element.id = "card-" + id
 
 		let title = document.createElement("h2")
 		title.textContent = product.name
@@ -56,9 +58,23 @@ class HTMLCard {
 
 		let addCart = document.createElement("button")
 		addCart.textContent = "🛒"
+		addCart.addEventListener('click', (event) => {
+			const listCartItem = JSON.parse(localStorage.getItem('cartItem')) || {};
+			if(listCartItem[id]) { listCartItem[id] += 1 }
+			else { listCartItem[id] = 1 }
+			localStorage.setItem('cartItem', JSON.stringify(listCartItem));
+		});
 
 		let addFav = document.createElement("button")
 		addFav.textContent = "♥"; addFav.style.color = "red"
+		addFav.addEventListener('click', (event) => {
+			const listFavItem = JSON.parse(localStorage.getItem('favItem')) || [];
+			if(listFavItem && listFavItem.includes(id)){
+				listFavItem.splice(listFavItem.indexOf(id), 1);
+				event.target.classList.remove('red');
+			} else { listFavItem.push(id) }
+			localStorage.setItem('favItem', JSON.stringify(listFavItem)); toggle()
+		});
 
 		let buttonDiv = document.createElement("div")
 
@@ -86,3 +102,4 @@ if (localStorage.getItem("connectedUser")) {
 // Lance la récupération des produits et
 // de leur promotions une fois la page charger.
 window.onload = (new HTMLCard)
+

@@ -249,6 +249,7 @@ a:hover {
 
 .red {
   background: red;
+  color: black !important;
 }
 
 .none {
