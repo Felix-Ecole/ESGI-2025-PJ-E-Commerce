@@ -82,7 +82,19 @@ window.onload = async () => {
 			tbody.append(cartProduct.createTrElement());
 			total += cartProduct.getReducedPrice();
 		}
-		totalPriceEl.innerText = total.toFixed(2) + " €";
+
+		const promoCode = localStorage.getItem("appliedPromo");
+		const promos = await importData("promos.json");
+
+		totalPriceEl.innerText = (() => {
+			if (promoCode) {
+				return promos[promoCode].type === "%"
+					? total * (1 - promos[promoCode].value / 100)
+					: (total - promos[promoCode].value)
+			} else {
+				return total
+			}
+		})().toFixed(2) + " €";
 	} else {
 		tbody.innerHTML = '<tr><td colspan="6">Votre panier est vide.</td></tr>';
 		totalPriceEl.innerText = "0 €";
@@ -90,13 +102,28 @@ window.onload = async () => {
 };
 
 
-document.querySelector("#promo").onsubmit = (e) => {
-	e.preventDefault()
-}
+document.querySelector("#promo").onsubmit = async (e) => {
+	e.preventDefault();
+
+	const code = document.querySelector("#promoInput").value.trim();
+	const promos = await importData("promos.json");
+
+	if (promos[code]) {
+		localStorage.setItem("appliedPromo", code);
+		alert("Code promo appliqué : " + code);
+		location.reload();
+	} else {
+		alert("Code promo invalide.");
+	}
+};
 
 document.querySelector("#validate").onsubmit = (e) => {
-	e.preventDefault()
-}
+	e.preventDefault();
 
+	alert("Panier validé ! Merci pour votre commande.");
+	localStorage.removeItem("cartItem");
+	localStorage.removeItem("appliedPromo");
+	location.reload();
+};
 
 if (!localStorage.getItem("connectedUser")) document.location = 'index.html';
