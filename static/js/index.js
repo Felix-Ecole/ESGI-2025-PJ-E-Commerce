@@ -13,6 +13,7 @@ class HTMLCard {
 					let card = this.createCard(id, product, reductions)
 					document.getElementById("productList").appendChild(card)
 				})
+				toggle();
 			})
 			.catch(e => console.error("Product initialisation failed:", e))
 	}
@@ -71,12 +72,8 @@ class HTMLCard {
 			if(listFavItem && listFavItem.includes(id)){
 				listFavItem.splice(listFavItem.indexOf(id), 1);
 				event.target.classList.remove('red');
-			}
-			else {
-				listFavItem.push(id);
-			}
-			localStorage.setItem('favItem', JSON.stringify(listFavItem));
-			toggle()
+			} else { listFavItem.push(id) }
+			localStorage.setItem('favItem', JSON.stringify(listFavItem)); toggle()
 		});
 
 		let buttonDiv = document.createElement("div")
@@ -105,3 +102,4 @@ if (localStorage.getItem("connectedUser")) {
 // Lance la récupération des produits et
 // de leur promotions une fois la page charger.
 window.onload = (new HTMLCard)
+

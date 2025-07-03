@@ -18,6 +18,7 @@ export function logout() {
 	localStorage.removeItem("connectedUser");
 }
 
+// Fonction qui met une couleur sur les boutons de card d'item favorise
 export function toggle() {
 	const listFavItem = JSON.parse(localStorage.getItem('favItem')) || [];
 	if(listFavItem){
